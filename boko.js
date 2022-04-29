@@ -9,15 +9,11 @@ bookName.forEach(function (book) {
     });
 });
 
-// Adding items i.e. books!
+// preventing default action of form(add-book)
 
-// function addbook() {
+var addbook = document.querySelector('#add-book');
+addbook.addEventListener('click', function (e) {
+    e.preventDefault();
+});
 
-// }
 
-var newLi = bookName[0].parentElement;
-
-let ul = document.querySelector('ul');
-console.log(ul);
-
-ul.appendChild(newLi);
