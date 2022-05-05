@@ -25,6 +25,10 @@ addbook.addEventListener('submit', function (e) {
     
     const value = addbook.querySelector('input').value; 
 
+    if (value == "") {
+        return;
+    }
+
     deleteBtn.textContent = "delete";
     newBook.textContent = value;
 
@@ -37,7 +41,11 @@ addbook.addEventListener('submit', function (e) {
     const ul = document.querySelector('.book-list');
 
     ul.appendChild(newLi);
+
+    addbook.querySelector('input').value = "";
 });
+
+
 
 // building search module for filtering out books
 
