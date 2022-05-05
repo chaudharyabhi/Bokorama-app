@@ -6,7 +6,8 @@ var bookList = document.querySelector('.book-list');
 bookList.addEventListener('click', function (e) {
     if (e.target.textContent == "delete") {
 
-        e.target.parentElement.style.display = "none";
+        // e.target.parentElement.style.display = 'none';
+        e.target.parentElement.remove();
     };
 });
 
@@ -38,4 +39,23 @@ addbook.addEventListener('submit', function (e) {
     ul.appendChild(newLi);
 });
 
+// building search module for filtering out books
 
+const search = document.forms[0].querySelector('input');
+
+search.addEventListener('keyup', function (e) {
+
+    const searchTerm = search.value.toLowerCase();
+    const title = bookList.getElementsByTagName('li');
+    
+    Array.from(title).forEach(function (titleName) {
+        const BookName = titleName.querySelector('span').textContent.toLowerCase();
+
+        if (BookName.indexOf(searchTerm) != -1) {
+            titleName.style.display = 'block';
+        }
+        else {
+            titleName.style.display = 'none';
+        }
+    });
+});

@@ -22,7 +22,7 @@ header{
     font-size: 30px;
 }
 
-.search{
+#search{
     padding: 5%;
     padding-bottom: 0;
 }
@@ -35,14 +35,14 @@ ul {
 
 li{
     margin: 20px;
-    background-color: rgb(199, 247, 252);
+    background-color: white;
     padding: 3.5%;
     border-left: 4px solid rgb(168, 6, 6);
     border-radius: 5px;
 }
 
 li:hover {
-    border-left: 4px solid rgb(116, 115, 115);
+    border-left: 4px solid aqua;
 }
 
 .title{
@@ -56,6 +56,11 @@ li:hover {
     border-radius: 5px;
     margin-top: -5px;
     color: white;
+}
+
+.delete:hover{
+    opacity: 0.5;
+    background-color: aqua;
 }
 
 #add-book{
