@@ -67,3 +67,21 @@ search.addEventListener('keyup', function (e) {
         }
     });
 });
+
+
+//testing
+export function onlyUniqueRecipients(recipients) {
+  const emails = [];
+
+  const uniqueRecipients = recipients.filter((recipient) => {
+    if (!emails.includes(recipient.email)) {
+      emails.push(recipient.email);
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  return uniqueRecipients;
+}
+
